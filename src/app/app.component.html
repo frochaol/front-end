@@ -1,10 +1,16 @@
 <!-- Ejemplo de como desde un label diferente poder llamar a otro oculto -->
 <!-- <input type="file" style="display: none;" #cargador>
 <button (click)="cargador.click()">Cargar Archivo</button> -->
+<app-menu></app-menu>
 
-<h2>En cines</h2>
-<!-- Aquí hay un ejemplo de como enviar parámetros a un componente -->
-<app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
+<div class="contenedor">
+    <app-rating [maximoRating]="5"></app-rating>
+    <!-- <h2>En cines</h2> -->
+    <!-- Aquí hay un ejemplo de como enviar parámetros a un componente -->
+    <!-- <app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
 
-<h2>Futuros estrenos</h2>
-<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
+    <h2>Futuros estrenos</h2>
+    <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas> -->
+</div>
+
+    

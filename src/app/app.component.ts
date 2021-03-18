@@ -13,12 +13,14 @@ export class AppComponent implements OnInit{
       {
       titulo: 'Spider-Man - Far From Home',
       fechaLanzamiento: new Date(),
-      precio: 1400.99
+      precio: 1400.99,      
+      poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA2YHczYT4I-YQDqkYrOS48dCH1gWjETBntQ&usqp=CAU'
           },
       {
         titulo: 'Moana',
         fechaLanzamiento: new Date('2020-11-12'),
-        precio: 30.99
+        precio: 30.99,
+        poster: 'https://play-lh.googleusercontent.com/AhS9Fu-BodjCEkNGM3eelhgdwexK1oAEWzZXS2GKB0S4ILPU2CG-1ZayIuUhi8uOD8k'
       }
     ];
 
@@ -44,7 +46,13 @@ export class AppComponent implements OnInit{
     ];
   }
 
-  peliculasEnCines: { titulo: string; fechaLanzamiento: Date; precio: number; }[] | any;
-  peliculasProximosEstrenos: { titulo: string; fechaLanzamiento: Date; precio: number; }[] | any;
+  peliculasEnCines: [] | any;
+  peliculasProximosEstrenos: [] | any;
+  manejarRated(voto: number): void {
+    alert(voto);
+  }
+  asignarvalor(e: any) {
+    this.title = e.target.value;
+  }
 
 }

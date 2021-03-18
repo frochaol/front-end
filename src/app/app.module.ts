@@ -16,7 +16,7 @@ import { RatingComponent } from './utilidades/rating/rating.component';
     ListadoPeliculasComponent,
     ListadoGenericoComponent,
     MenuComponent,
-    RatingComponent
+    RatingComponent,
   ],
   imports: [
     BrowserModule,

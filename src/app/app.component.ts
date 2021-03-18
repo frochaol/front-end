@@ -24,23 +24,23 @@ export class AppComponent implements OnInit{
 
     this.peliculasProximosEstrenos = 
     [
-      {
-        titulo: 'Iron Man',
-        fechaLanzamiento: new Date(),
-        precio: 1400.99
-      },
+      // {
+      //   titulo: 'Iron Man',
+      //   fechaLanzamiento: new Date(),
+      //   precio: 1400.99
+      // },
       
-      {
-        titulo: 'Dunkerque',
-        fechaLanzamiento: new Date('2020-11-12'),
-        precio: 30.99
-      },
+      // {
+      //   titulo: 'Dunkerque',
+      //   fechaLanzamiento: new Date('2020-11-12'),
+      //   precio: 30.99
+      // },
 
-      {
-        titulo: 'Gaa',
-        fechaLanzamiento: new Date('2020-11-12'),
-        precio: 10.90
-      }
+      // {
+      //   titulo: 'Gaa',
+      //   fechaLanzamiento: new Date('2020-11-12'),
+      //   precio: 10.90
+      // }
     ];
   }
 

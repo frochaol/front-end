@@ -4,13 +4,7 @@
 <app-menu></app-menu>
 
 <div class="contenedor">
-    <!-- <app-rating (rated)="manejarRated($event)"></app-rating> -->
-    <h2>En cines</h2>
-    <!-- Aquí hay un ejemplo de como enviar parámetros a un componente -->
-    <app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
-
-    <h2>Futuros estrenos</h2>
-    <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
+    <router-outlet></router-outlet>
 </div>
 
     

@@ -18,6 +18,11 @@ import { CrearActorComponent } from './actores/crear-actor/crear-actor.component
 import { CrearPeliculaComponent } from './pelicula/crear-pelicula/crear-pelicula.component';
 import { CrearCineComponent } from './cines/crear-cine/crear-cine.component';
 import { IndiceCinesComponent } from './cines/indice-cines/indice-cines.component';
+import { EditarActorComponent } from './actores/editar-actor/editar-actor.component';
+import { EditarGeneroComponent } from './generos/editar-genero/editar-genero.component';
+import { EditarCinesComponent } from './cines/editar-cines/editar-cines.component';
+import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-pelicula.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +38,18 @@ import { IndiceCinesComponent } from './cines/indice-cines/indice-cines.componen
     CrearPeliculaComponent,
     CrearCineComponent,
     IndiceCinesComponent,
+    EditarActorComponent,
+    EditarGeneroComponent,
+    EditarCinesComponent,
+    EditarPeliculaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

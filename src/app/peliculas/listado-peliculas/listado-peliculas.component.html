@@ -3,7 +3,7 @@
         <div class="peliculas-contenedor">
             <div *ngFor="let pelicula of peliculas; let index = index" class="pelicula-contenedor">
                 <a href="">
-                    <img [src]="pelicula.poster" alt="Poster">
+                    <img class="imagen" [src]="pelicula.poster" alt="Poster">
                 </a>      
                 <p>
                     <a href="">{{pelicula.titulo}}</a>

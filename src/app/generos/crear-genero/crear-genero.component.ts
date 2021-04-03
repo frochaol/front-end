@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLetraMayuscula';
+import { generoCreacionDTO } from '../genero';
 
 @Component({
   selector: 'app-crear-genero',
@@ -11,35 +12,12 @@ import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLet
 export class CrearGeneroComponent implements OnInit {
 
   constructor(private router: Router, private formBuilder: FormBuilder) { }
+  ngOnInit(): void { }
 
-  form: FormGroup | any;
-  ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      nombre: ['', {
-        validators: [Validators.required, Validators.minLength(3), primeraLetraMayuscula()]
-      }]
-    });
-  }
-
-  guardarCambios() {
+  guardarCambios(genero: generoCreacionDTO) {
     // ... comunicación con web api
+    console.log(genero);
     this.router.navigate(['/generos']);
-  }
-
-  obtenerErrorCampoNombre() {
-    var campo = this.form.get('nombre');
-    if (campo.hasError('required')) {
-      return 'El campo nombre es requerido';
-    }
-
-    if (campo.hasError('minlength')) {
-      return 'La longitud mínima es de 3 carácteres'
-    }
-
-    if (campo.hasError('primeraLetraMayuscula')) {
-      return campo.getError('primeraLetraMayuscula').mensaje;
-    }
-    return '';
   }
 
 }

@@ -10,7 +10,7 @@ export class EditarCinesComponent implements OnInit {
 
   constructor() { }
 
-  modelo: cineDTO = {nombre: "Saga Falabella"};
+  modelo: cineDTO = {nombre: "Saga Falabella", latitud: -16.398702139479262 , longitud: -71.54281318187725};
 
   ngOnInit(): void {
   }

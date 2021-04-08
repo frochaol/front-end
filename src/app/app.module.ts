@@ -11,6 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import "leaflet/dist/images/marker-shadow.png";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
@@ -78,8 +79,9 @@ import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-er
     ReactiveFormsModule,
     LeafletModule,
     FormsModule,
-    HttpClientModule,
-    MarkdownModule.forRoot()    
+    HttpClientModule,    
+    MarkdownModule.forRoot(),
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

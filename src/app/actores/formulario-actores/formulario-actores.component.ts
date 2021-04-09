@@ -21,6 +21,8 @@ export class FormularioActoresComponent implements OnInit {
   @Output()
   OnSubmit: EventEmitter<actorCreacionDTO> = new EventEmitter<actorCreacionDTO>();
 
+  imagenCambiada = false;
+
   ngOnInit(): void {
     
     this.form = this.formBuilder.group({
@@ -45,10 +47,14 @@ export class FormularioActoresComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.imagenCambiada) {
+      this.form.patchValue({'foto': null});
+    }
     this.OnSubmit.emit(this.form.value);
   }
 
   archivoSeleccionado(file: any) {
+    this.imagenCambiada = true;
     this.form.get('foto').setValue(file);
   }
 

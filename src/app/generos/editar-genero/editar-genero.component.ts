@@ -32,8 +32,7 @@ export class EditarGeneroComponent implements OnInit {
     this.generosService.editar(this.modelo.id, genero)
     .subscribe(() => {
       this.router.navigate(['/generos']);
-    }, error => this.errores =parsearErroresAPI(error));
-    
+    }, error => this.errores =parsearErroresAPI(error));    
   }
 
 }

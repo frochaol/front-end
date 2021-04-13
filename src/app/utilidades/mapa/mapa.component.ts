@@ -25,8 +25,8 @@ export class MapaComponent implements OnInit {
     layers: [
       tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
     ],
-    zoom: 18,
-    center: latLng(-16.398702139479262, -71.54281318187725)
+    zoom: 12,
+    center: latLng(-16.399715454897578, -71.5364456176758)
   };
 
   capas: Marker<any>[] = [];

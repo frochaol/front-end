@@ -19,7 +19,7 @@ export class DetallePeliculaComponent implements OnInit {
     pelicula: PeliculaDTO | any;
     fechaLanzamiento: Date | any;
     trailerURL: SafeResourceUrl | any;
-    coordenadas: CoordenadaConMensaje[] | any
+    coordenadas: CoordenadaConMensaje[] = [];
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {

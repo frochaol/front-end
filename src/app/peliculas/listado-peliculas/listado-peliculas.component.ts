@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PeliculaDTO } from 'src/app/pelicula/pelicula';
 
 @Component({
   selector: 'app-listado-peliculas',
@@ -10,10 +11,7 @@ export class ListadoPeliculasComponent implements OnInit {
   constructor() { }
   // Recibe peliculas desde otro componente que llama a este gracias al Input()
   @Input()
-  peliculas: { 
-    titulo: string; 
-    fechaLanzamiento: Date; 
-    precio: number; }[] | any;
+  peliculas: PeliculaDTO[] | any;
 
   ngOnInit(): void {
     

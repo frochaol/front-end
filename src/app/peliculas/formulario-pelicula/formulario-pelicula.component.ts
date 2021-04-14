@@ -26,15 +26,16 @@ export class FormularioPeliculaComponent implements OnInit {
 
   @Input()
   generosNoSeleccionados: MultipleSelectorModel[] | any;
-
+  @Input()
   generosSeleccionados: MultipleSelectorModel[] = [];
   @Input()
   cinesNoSeleccionados: MultipleSelectorModel[] | any;
-  
+  @Input()
   cinesSeleccionados: MultipleSelectorModel[] = [];
-
   @Input()
   actoresSeleccionados: actorPeliculaDTO[] = [];
+
+  imagenCambiada = false;
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -71,6 +72,9 @@ export class FormularioPeliculaComponent implements OnInit {
     });
     this.form.get('actores').setValue(actores);
 
+    if (!this.imagenCambiada) {
+      this.form.patchValue({'poster': null});
+    }
     this.OnSubmit.emit(this.form.value);    
   }
 
@@ -80,6 +84,7 @@ export class FormularioPeliculaComponent implements OnInit {
 
   archivoSeleccionado(archivo: File) {
     this.form.get('poster').setValue(archivo);
+    this.imagenCambiada = true;
   }
 
 }

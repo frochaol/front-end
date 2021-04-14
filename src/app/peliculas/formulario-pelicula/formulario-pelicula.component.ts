@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { actorPeliculaDTO } from 'src/app/actores/actor';
 import { PeliculaCreacionDTO, PeliculaDTO } from 'src/app/pelicula/pelicula';
 import { MultipleSelectorModel } from 'src/app/utilidades/selector-multiple/MultipleSelectorModel';
 
@@ -15,8 +16,11 @@ export class FormularioPeliculaComponent implements OnInit {
   form: FormGroup | any;
 
   @Input()
-  modelo: PeliculaDTO | any;
+  errores: string[] = [];
 
+  @Input()
+  modelo: PeliculaDTO | any;
+  
   @Output()
   OnSubmit: EventEmitter<PeliculaCreacionDTO> = new EventEmitter<PeliculaCreacionDTO>();
 
@@ -28,6 +32,9 @@ export class FormularioPeliculaComponent implements OnInit {
   cinesNoSeleccionados: MultipleSelectorModel[] | any;
   
   cinesSeleccionados: MultipleSelectorModel[] = [];
+
+  @Input()
+  actoresSeleccionados: actorPeliculaDTO[] = [];
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -42,8 +49,9 @@ export class FormularioPeliculaComponent implements OnInit {
       trailer: '',
       fechaLanzamiento: '',
       poster: '',
-      generosId: '',
-      cinesId: ''
+      generosIds: '',
+      cinesIds: '',
+      actores: ''
     });
 
     if (this.modelo !== undefined) {
@@ -53,10 +61,15 @@ export class FormularioPeliculaComponent implements OnInit {
 
   guardarCambios() {
     const generosIds = this.generosSeleccionados.map(val => val.llave);
-    this.form.get('generosId').setValue(generosIds);
+    this.form.get('generosIds').setValue(generosIds);
 
     const cinesIds = this.cinesSeleccionados.map(val => val.llave);
-    this.form.get('cinesId').setValue(cinesIds);
+    this.form.get('cinesIds').setValue(cinesIds);
+
+    const actores = this.actoresSeleccionados.map((val: any) => {
+      return {id: val.id, personaje: val.personaje}
+    });
+    this.form.get('actores').setValue(actores);
 
     this.OnSubmit.emit(this.form.value);    
   }

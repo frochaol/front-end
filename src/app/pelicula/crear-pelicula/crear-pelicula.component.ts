@@ -3,6 +3,7 @@ import { cineDTO } from 'src/app/cines/cine';
 import { generoDTO } from 'src/app/generos/genero';
 import { PeliculasService } from 'src/app/peliculas/peliculas.service';
 import { MultipleSelectorModel } from 'src/app/utilidades/selector-multiple/MultipleSelectorModel';
+import { parsearErroresAPI } from 'src/app/utilidades/utilidades';
 import { PeliculaCreacionDTO } from '../pelicula';
 
 @Component({
@@ -14,6 +15,7 @@ export class CrearPeliculaComponent implements OnInit {
 
   constructor(private peliculasService: PeliculasService) { }
 
+  errores: string[] = [];
   generosNoSeleccionados: MultipleSelectorModel[] = [];
   cinesNoSeleccionados: MultipleSelectorModel[] = [];
  
@@ -32,7 +34,9 @@ export class CrearPeliculaComponent implements OnInit {
   }
 
   guardarCambios (pelicula: PeliculaCreacionDTO) {
-    console.log(pelicula);
+    this.peliculasService.crear(pelicula)
+      .subscribe(() => console.log('exitoso'),
+      error =>  this.errores = parsearErroresAPI(error));
   }
 
 }

@@ -1,7 +1,11 @@
 <!-- <app-rating (rated)="manejarRated($event)"></app-rating> -->
 <h2>En cines</h2>
 <!-- Aquí hay un ejemplo de como enviar parámetros a un componente -->
-<app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
+<app-listado-peliculas 
+(borrado)="borrado()"
+[peliculas]="peliculasEnCines"></app-listado-peliculas>
 
 <h2>Futuros estrenos</h2>
-<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
+<app-listado-peliculas
+(borrado)="borrado()"
+[peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
